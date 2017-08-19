@@ -34,7 +34,8 @@ class Vocabulary:
         words = json.loads(response.content)\
 
         # 如果view_frame已存在，移除当前view_frame并重新绘制
-        if hasattr(self, 'view_frame'):
+        # if hasattr(self, 'view_frame'):
+        if self.view_frame is not None:
             self.view_frame.grid_remove()
         self.view_frame = Frame(self.main, padx=30)
         self.view_frame.columnconfigure([i for i in range(6)], weight=1)
