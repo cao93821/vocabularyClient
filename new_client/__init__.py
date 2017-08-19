@@ -1,1 +1,1 @@
-from . import new_client.py
+from . import new_client
