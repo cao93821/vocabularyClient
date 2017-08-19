@@ -29,8 +29,8 @@ class Vocabulary:
         self.refresh(1)
 
     def refresh(self, current_index):
-        # response = requests.get('http://139.196.77.131:5000/words')
-        response = requests.get('http://127.0.0.1:5000/words')
+        response = requests.get('http://139.196.77.131:5000/words')
+        # response = requests.get('http://127.0.0.1:5000/words')
         words = json.loads(response.content)\
 
         # 如果view_frame已存在，移除当前view_frame并重新绘制
@@ -93,9 +93,9 @@ class Vocabulary:
             n += 1
 
     def keep_in_mind(self, button, word_id):
-        requests.put('http://127.0.0.1:5000/word/{}'.format(word_id))
+        # requests.put('http://127.0.0.1:5000/word/{}'.format(word_id))
         # 开发环境
-        # requests.put('http://139.196.77.131:5000/word/{}'.format(word_id))
+        requests.put('http://139.196.77.131:5000/word/{}'.format(word_id))
         # 线上环境
         button['state'] = 'disable'
         self.root.update()
